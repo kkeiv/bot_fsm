@@ -9,13 +9,13 @@ from config import Config, load_config
 
 
 config: Config = load_config()
-BOT_TOKEN: str = config.tg_bot.token
+BOT_FSM_TOKEN: str = config.tg_bot.token
 
 # Инициализируем хранилище (создаем экземпляр класса MemoryStorage)
 storage: MemoryStorage = MemoryStorage()
 
 # Создаем объекты бота и диспетчера
-bot: Bot = Bot(BOT_TOKEN)
+bot: Bot = Bot(BOT_FSM_TOKEN)
 dp: Dispatcher = Dispatcher(bot, storage=storage)
 
 # Создаем "базу данных" пользователей
